@@ -28,11 +28,12 @@ header {
 
 /* Centering the logo */
 .logo {
+    font-family: 'montserrat';
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     font-size: 1.8rem;
-    font-weight: bold;
+    font-weight: thin;
     text-transform: uppercase;
 }
 
@@ -67,7 +68,7 @@ nav ul li a:hover {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: url('1.JPG') no-repeat center center/cover;
+    background: url('1.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,6 +83,8 @@ nav ul li a:hover {
 }
 
 .hero h1 {
+    font: Montserrat;
+    font-weight: thin;
     font-size: 3rem;
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -103,16 +106,19 @@ nav ul li a:hover {
 }
 
 #about h2 {
+    font-family: 'poppins';
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
 #about p {
-    font-size: 1.2rem;
+    font-family: 'poppins';
+    font-size: 1rem;
     max-width: 800px;
     margin: 0 auto;
     opacity: 0.8;
 }
+
 
 /* Gallery Section */
 #gallery {
@@ -139,42 +145,43 @@ nav ul li a:hover {
 /* Image Wrapper */
 .photo-item {
     position: relative;
-    overflow: hidden;
-    border-radius: 5px;
+    display: inline-block;
+    width: fit-content; /* Shrinks container to fit the image */
+    height: fit-content; /* Ensures the overlay stays within the image bounds */
 }
 
-/* Images */
 .photo-item img {
     display: block;
-    width: auto;
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    object-fit: cover;
 }
 
-/* Overlay Effect */
 .photo-item::after {
-    content: attr(data-title); /* Uses the data-title attribute */
+    content: attr(data-title);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0); /* Transparent by default */
     color: white;
+    font: 'poppins';
+    font-weight: thin;
     font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transition: background 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    pointer-events: none; /* Prevents hover issues */
 }
 
-/* Hover Effect */
+/* Show overlay ONLY when hovering over the image */
 .photo-item:hover::after {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5); /* Adds the black semi-transparent layer */
     opacity: 1;
 }
+
 
 /* Custom Sizes for Each Image */
 .photo-item:nth-child(1) img { width: 600px; }
