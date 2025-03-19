@@ -56,56 +56,59 @@ body {
 
 /* Header */
 header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 20px 50px;
-    background: transparent;
+    align-items: center;
+    padding: 15px 20px;
+    background: #000; /* Adjust color */
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
     z-index: 1000;
 }
 
-/* Centering the logo */
+/* Logo styling */
 .logo {
-    font-family: 'montserrat';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     font-size: 1.8rem;
-    font-weight: thin;
-    text-transform: uppercase;
+    font-weight: bold;
 }
 
-/* Navigation */
+/* Navigation Menu */
 nav {
-    width: 100%;
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #ffffff;
+nav a {
     text-decoration: none;
+    color: white;
     font-size: 1rem;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    color: #ffcc00;
+nav a:hover {
+    color: #ffcc00; /* Change hover color */
 }
+
+/* 📱 Responsive Menu for Smaller Screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+}
+
 
 /* Hero Section */
 .hero {
