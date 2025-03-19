@@ -54,61 +54,57 @@ body {
     display: none;
 }
 
-/* Header */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background: #000; /* Adjust color */
-    color: white;
-    position: fixed;
+    position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: transparent;
     z-index: 1000;
 }
 
-/* Logo styling */
+/* Centering the logo */
 .logo {
+    font-family: 'montserrat';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 1.8rem;
-    font-weight: bold;
+    font-weight: thin;
+    text-transform: uppercase;
 }
 
-/* Navigation Menu */
+/* Navigation */
 nav {
+    width: 100%;
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
 }
 
-nav a {
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
     text-decoration: none;
-    color: white;
     font-size: 1rem;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: #ffcc00; /* Change hover color */
+nav ul li a:hover {
+    color: #ffcc00;
 }
-
-/* 📱 Responsive Menu for Smaller Screens */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-        padding: 10px;
-    }
-
-    nav {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .logo {
-        font-size: 1.5rem;
-    }
-}
-
 
 /* Hero Section */
 .hero {
