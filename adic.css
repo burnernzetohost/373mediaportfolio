@@ -69,13 +69,14 @@ header {
 
 /* Centering the logo */
 .logo {
-    font-family: 'montserrat';
+    font-family: 'Montserrat', sans-serif;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     font-size: 1.8rem;
-    font-weight: thin;
+    font-weight: 300; /* Thin weight */
     text-transform: uppercase;
+    color: white;
 }
 
 /* Navigation */
@@ -85,10 +86,13 @@ nav {
     justify-content: space-between;
 }
 
+/* Navigation Menu */
 nav ul {
     list-style: none;
     display: flex;
     align-items: center;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
@@ -105,6 +109,44 @@ nav ul li a {
 nav ul li a:hover {
     color: #ffcc00;
 }
+
+/* 📱 Mobile View: Logo on Top, Menu in One Line Below */
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    .logo {
+        position: relative;
+        left: auto;
+        transform: none;
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+}
+
 
 /* Hero Section */
 .hero {
