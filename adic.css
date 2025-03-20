@@ -224,6 +224,7 @@ nav ul li a:hover {
     grid-auto-rows: 300px; 
     grid-auto-columns: 1000px;/* Increase row height */
     grid-auto-flow: dense;
+    justify-content: center; 
     gap: 15px; /* Slightly increase gap */
     padding: 20px;
 }
